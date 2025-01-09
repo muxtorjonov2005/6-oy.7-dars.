@@ -12,10 +12,10 @@ function Login() {
 
   function validate() {
 
-    // if(password.length < 8) {
-    //   alert('Parol kamida 8 ta belgidan ko\'p bo\'lishi kerak')
-    //   return false
-    // }
+    if(!name || !password) {
+      alert('Iltimos barcha maydonlarni to\'ldiring')
+      return false
+    }
 
     return true
   }
@@ -41,16 +41,16 @@ function Login() {
       }
     })
      .then((response) => {
-       console.log(response);
+       console.log(response.data);
        if(response.status === 200) {
         localStorage.setItem('user', JSON.stringify(response.data))
-        localStorage.setItem('token', response.data.accesToken)        
-        navigate('/')
+        localStorage.setItem('token', response.data.accessToken)        
+        navigate('/home', {state: {token: response.data.accessToken}})
        }
        
       })
       .catch((error) => {
-        if(error.status === 404 || error.status === 401) {
+        if(error.response?.status === 404 || error.response?.status === 401) {
           alert(error.response?.data?.message)
         }
         console.log(error)
@@ -68,7 +68,7 @@ function Login() {
       <form className='register_form' onSubmit={handleSubmit}>
         <input value={name} type="text" placeholder='Enter name' onChange={(e) => { setName(e.target.value)}} />
         <input value={password} type="password" placeholder='Enter password' onChange={(e) => { setPassword(e.target.value)}} />
-        <button disabled = {loading}>{!loading ? 'REGISTER' : 'Waiting...'}</button>
+        <button disabled = {loading} className='form_button'>{!loading ? 'REGISTER' : 'Waiting...'}</button>
       </form>
     </div>
   )

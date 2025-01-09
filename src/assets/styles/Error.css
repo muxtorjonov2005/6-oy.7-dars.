@@ -1,0 +1,41 @@
+.error_container {
+    width: 700px;
+    margin:50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.error h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.error p {
+    width: 400px;
+    font-size: 15px;
+}
+
+.button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+img {
+    width: 110px;
+    height: 135px;
+}

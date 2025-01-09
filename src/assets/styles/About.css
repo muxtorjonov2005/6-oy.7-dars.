@@ -1,0 +1,33 @@
+.about_container{
+    margin: auto;
+    width: 1000px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog_item{
+    width: 270px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blogButton {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blogButton:hover {
+    background-color: #45a049;
+}

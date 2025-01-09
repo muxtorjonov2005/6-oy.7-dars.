@@ -18,13 +18,18 @@ function Register() {
       return false
     }
 
-    // if(password.length < 8) {
-    //   alert('Parol kamida 8 ta belgidan ko\'p bo\'lishi kerak')
-    //   return false
-    // }
+    if(name.length < 3 && email.length < 6) {
+      alert('Ismingiz 3 ta belgidan ko\'p bo\'lishi kerak va emailingiz 6 ta belgidan ko\'p bo\'lishi kerak')
+      return false
+    }
+
+    if(password.length < 8) {
+      alert('Parol kamida 8 ta belgidan ko\'p bo\'lishi kerak')
+      return false
+    }
 
     if(password !== confirmPass) {
-      alert('Parollar tasdiqlanmagan')
+      alert('Parol tasdiqlanmagan')
       return false
     }
     return true
@@ -79,7 +84,7 @@ function Register() {
         <input value={email} type="email" placeholder='Enter email' onChange={(e) => { setEmail(e.target.value)}}/>
         <input value={password} type="password" placeholder='Enter password' onChange={(e) => { setPassword(e.target.value)}} />
         <input value={confirmPass} type="password" placeholder='Confirm password' onChange={(e) => { setConfirmPass(e.target.value)}} />
-        <button disabled = {loading}>{!loading ? 'REGISTER' : 'Waiting...'}</button>
+        <button disabled = {loading} className='form_button'>{!loading ? 'REGISTER' : 'Waiting...'}</button>
       </form>
     </div>
   )

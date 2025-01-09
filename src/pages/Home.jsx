@@ -1,21 +1,16 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import '../assets/styles/Home.css'
 
 function Home() {
-    const navigate = useNavigate()
-    function handleClick() {
-        let user = {
-            id: 45,
-            name: 'John Doe',
-            email: 'johndoe@example.com',
-            phone: '1234567890'
-        }
-
-        navigate('/details/45', {state: user})
-    }
+  const navigate = useNavigate()
+  function handleClick() {
+    navigate('/about')
+  }
   return (
-    <div>
-        <button onClick={handleClick}>Go to details</button>
+    <div className='home_container'>
+      <h2>Foydalanuvchilar haqida ma'lumot</h2>
+      <button onClick={handleClick} className='homeButton'>Bloglarga o'tish</button>
     </div>
   )
 }

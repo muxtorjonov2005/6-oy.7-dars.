@@ -13,3 +13,15 @@
 .register_form * {
     padding: 10px;
 }
+
+.form_button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_button:hover {
+    background-color: #0069d9;
+}
